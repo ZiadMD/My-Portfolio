@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ziad Mohamed - Software & AI Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        /* Smooth scroll behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Navbar animation */
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: #60A5FA;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Project card hover effect */
+        .project-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Skill card animation */
+        .skill-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-10px) scale(1.02);
+        }
+
+        /* Hero section typing animation */
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        .typing-text {
+            overflow: hidden;
+            white-space: nowrap;
+            animation: typing 3s steps(40, end);
+        }
+
+        /* Pulse animation for contact form submit button */
+        .submit-btn:hover {
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-100">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-gray-800 shadow-md z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="text-2xl font-bold text-blue-400 hover:text-blue-300 transition-colors duration-300">ZM.</div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link text-gray-300 hover:text-blue-400 transition-colors duration-300">Home</a>
+                    <a href="#projects" class="nav-link text-gray-300 hover:text-blue-400 transition-colors duration-300">Projects</a>
+                    <a href="#experience" class="nav-link text-gray-300 hover:text-blue-400 transition-colors duration-300">Experience</a>
+                    <a href="#skills" class="nav-link text-gray-300 hover:text-blue-400 transition-colors duration-300">Skills</a>
+                    <a href="#contact" class="nav-link text-gray-300 hover:text-blue-400 transition-colors duration-300">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-32 pb-20 px-6 bg-gray-900">
+        <div class="container mx-auto flex flex-col-reverse md:flex-row items-center justify-between">
+            <div class="md:w-1/2 mt-10 md:mt-0" data-aos="fade-right" data-aos-duration="1000">
+                <h1 class="text-5xl font-bold text-blue-400 mb-4 typing-text">Hi, I'm Ziad Mohamed</h1>
+                <p class="text-xl text-gray-300 mb-8" data-aos="fade-up" data-aos-delay="300">A software engineer specializing in AI/ML solutions and cutting-edge software development.</p>
+                <div class="flex space-x-4" data-aos="fade-up" data-aos-delay="600">
+                    <a href="https://www.linkedin.com/in/ziad-sheashaa-89797b15b/" class="text-4xl text-gray-300 hover:text-blue-400 transform hover:scale-110 transition-all duration-300"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/ZiadMD" class="text-4xl text-gray-300 hover:text-blue-400 transform hover:scale-110 transition-all duration-300"><i class="fab fa-github"></i></a>
+                    <a href="Media/Ziad Mohamed Sheashaa CV.pdf" 
+                       download 
+                       class="download-btn flex items-center gap-2 px-4 py-2 bg-blue-900 text-white rounded-lg hover:bg-blue-400 transform hover:scale-105 transition-all duration-300 shadow-lg group">
+                        <i class="fas fa-file-download group-hover:animate-bounce"></i>
+                        <span>Download CV</span>
+                    </a>
+                </div>
+            </div>
+            <div class="md:w-1/2" data-aos="fade-left" data-aos-duration="1000">
+                <img src="https://avatars.githubusercontent.com/u/75117432?v=4" alt="Ziad Mohamed" class="rounded-full w-64 h-64 object-cover mx-auto shadow-lg border-2 border-blue-400 transform hover:scale-105 transition-transform duration-300">
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-gray-800">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center text-blue-400 mb-12" data-aos="fade-up">Software & AI Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project cards with same content as before, but add data-aos attributes -->
+                <!-- Example for one project card (repeat for others): -->
+                <!-- <div class="project-card bg-gray-900 rounded-lg shadow-xl overflow-hidden border border-gray-700" data-aos="fade-up" data-aos-delay="100"> -->
+                <!-- Project content remains the same -->
+
+                <!-- AuthMaster Project -->
+                <div class="project-card bg-gray-900 rounded-lg shadow-xl overflow-hidden border border-gray-700"
+                    data-aos="fade-up" data-aos-delay="100">
+                    <img src="Media/AuthMaster.jpeg" alt="AuthMaster" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-blue-400 mb-2">AuthMaster</h3>
+                        <p class="text-gray-300 mb-4">This project, SecureLogin, is a simple and secure login system built
+                            with Python's Tkinter library, featuring sign-up, sign-in, and secure password hashing
+                            capabilities.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-blue-900 text-blue-300 rounded-full text-sm">Python</span>
+                            <span class="px-3 py-1 bg-blue-900 text-blue-300 rounded-full text-sm">GUI</span>
+                            <span class="px-3 py-1 bg-blue-900 text-blue-300 rounded-full text-sm">Tkinter</span>
+                        </div>
+                        <div class="flex space-x-4">
+                            <!-- <a href="#" class="text-blue-400 hover:text-blue-300">View Demo</a> -->
+                            <a href="https://github.com/ZiadMD/AuthMaster"
+                                class="text-blue-400 hover:text-blue-300">Code</a>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- LMS Project -->
+                <div class="project-card bg-gray-900 rounded-lg shadow-xl overflow-hidden border border-gray-700"
+                    data-aos="fade-up" data-aos-delay="100">
+    
+                    <img src="Media/LMS.jpeg" alt="LMS" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-blue-400 mb-2">LMS</h3>
+                        <p class="text-gray-300 mb-4">The Library Management System (LMS) is a C++ application that utilizes
+                            a doubly linked list to efficiently store and manage book records, offering features like
+                            sorting, searching, and dynamic management.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-blue-900 text-blue-300 rounded-full text-sm">C++</span>
+                            <span class="px-3 py-1 bg-blue-900 text-blue-300 rounded-full text-sm">Data Structures</span>
+                            <span class="px-3 py-1 bg-blue-900 text-blue-300 rounded-full text-sm">Algorithms</span>
+                        </div>
+                        <div class="flex space-x-4">
+                            <!-- <a href="#" class="text-blue-400 hover:text-blue-300">View Demo</a> -->
+                            <a href="https://github.com/ZiadMD/LMS" class="text-blue-400 hover:text-blue-300">Code</a>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Qt-Cascade-app Project -->
+                <div class="project-card bg-gray-900 rounded-lg shadow-xl overflow-hidden border border-gray-700"
+                    data-aos="fade-up" data-aos-delay="100">
+    
+                    <img src="Media/Qt-Cascade-app.jpeg" alt="Qt-Cascade-app" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-blue-400 mb-2">Qt-Cascade-app</h3>
+                        <p class="text-gray-300 mb-4">The Qt-Cascade-App is a desktop application built with Qt and OpenCV
+                            that performs object detection tasks using Haar cascade classifiers with a user-friendly GUI.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-blue-900 text-blue-300 rounded-full text-sm">C++</span>
+                            <span class="px-3 py-1 bg-blue-900 text-blue-300 rounded-full text-sm">Qt</span>
+                            <span class="px-3 py-1 bg-blue-900 text-blue-300 rounded-full text-sm">OpenCV</span>
+                            <span class="px-3 py-1 bg-blue-900 text-blue-300 rounded-full text-sm">GUI</span>
+                            <span class="px-3 py-1 bg-blue-900 text-blue-300 rounded-full text-sm">Computer Vision</span>
+                        </div>
+                        <div class="flex space-x-4">
+                            <!-- <a href="#" class="text-blue-400 hover:text-blue-300">View Demo</a> -->
+                            <a href="https://github.com/ZiadMD/Qt-Cascade-app"
+                                class="text-blue-400 hover:text-blue-300">Code</a>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- cat-dog-classifier Project -->
+                <div class="project-card bg-gray-900 rounded-lg shadow-xl overflow-hidden border border-gray-700"
+                    data-aos="fade-up" data-aos-delay="100">
+    
+                    <img src="Media/cat-dog-classifier.png" alt="cat-dog-classifier" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-blue-400 mb-2">cat-dog-classifier</h3>
+                        <p class="text-gray-300 mb-4">This project is a desktop application built with PySide6 and
+                            TensorFlow that classifies images as either cats or dogs using a customizable and adjustable
+                            model.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-blue-900 text-blue-300 rounded-full text-sm">Python</span>
+                            <span class="px-3 py-1 bg-blue-900 text-blue-300 rounded-full text-sm">PySide6</span>
+                            <span class="px-3 py-1 bg-blue-900 text-blue-300 rounded-full text-sm">TensorFlow</span>
+                            <span class="px-3 py-1 bg-blue-900 text-blue-300 rounded-full text-sm">GUI</span>
+                            <span class="px-3 py-1 bg-blue-900 text-blue-300 rounded-full text-sm">Computer Vision</span>
+                            <span class="px-3 py-1 bg-blue-900 text-blue-300 rounded-full text-sm">Deep Learning</span>
+                            <span class="px-3 py-1 bg-blue-900 text-blue-300 rounded-full text-sm">Convolutional Neural
+                                Networks</span>
+                            <span class="px-3 py-1 bg-blue-900 text-blue-300 rounded-full text-sm">Recurrent Neural
+                                Networks</span>
+                        </div>
+                        <div class="flex space-x-4">
+                            <!-- <a href="#" class="text-blue-400 hover:text-blue-300">View Demo</a> -->
+                            <a href="https://github.com/ZiadMD/cat-dog-classifier"
+                                class="text-blue-400 hover:text-blue-300">Code</a>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- EVER_CLoseLoop Project -->
+                <div class="project-card bg-gray-900 rounded-lg shadow-xl overflow-hidden border border-gray-700"
+                    data-aos="fade-up" data-aos-delay="100">
+    
+                    <img src="Media/EVER.png" alt="EVER_CLoseLoop" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-blue-400 mb-2">EVER_CLoseLoop</h3>
+                        <p class="text-gray-300 mb-4">An AI-powered autonomous truck system that combines machine learning,
+                            PID controllers, and computer vision to execute safe and efficient lane changes while
+                            considering real-time environmental factors and vehicle dynamics. </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-blue-900 text-blue-300 rounded-full text-sm">Python</span>
+                            <span class="px-3 py-1 bg-blue-900 text-blue-300 rounded-full text-sm">ROS</span>
+                            <span class="px-3 py-1 bg-blue-900 text-blue-300 rounded-full text-sm">TensorFlow</span>
+                            <span class="px-3 py-1 bg-blue-900 text-blue-300 rounded-full text-sm">Machine Learning</span>
+                            <span class="px-3 py-1 bg-blue-900 text-blue-300 rounded-full text-sm">Computer Vision</span>
+                            <span class="px-3 py-1 bg-blue-900 text-blue-300 rounded-full text-sm">Control Systems</span>
+                        </div>
+                        <div class="flex space-x-4">
+                            <!-- <a href="#" class="text-blue-400 hover:text-blue-300">View Demo</a> -->
+                            <a href="https://github.com/ZiadMD/EVER_CLoseLoop"
+                                class="text-blue-400 hover:text-blue-300">Code</a>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Numerical-Analysis-project Project -->
+                <div class="project-card bg-gray-900 rounded-lg shadow-xl overflow-hidden border border-gray-700"
+                    data-aos="fade-up" data-aos-delay="100">
+    
+                    <img src="Media/NAP.png" alt="Numerical-Analysis-project" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-blue-400 mb-2">Numerical-Analysis-project</h3>
+                        <p class="text-gray-300 mb-4">This project is a Linux-optimized C++17 application that implements
+                            various numerical analysis algorithms, including root finding, polynomial interpolation,
+                            numerical integration, and curve fitting, with both a Qt6 GUI and a command-line interface.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-blue-900 text-blue-300 rounded-full text-sm">C++</span>
+                            <span class="px-3 py-1 bg-blue-900 text-blue-300 rounded-full text-sm">Qt</span>
+                            <span class="px-3 py-1 bg-blue-900 text-blue-300 rounded-full text-sm">Math</span>
+                            <span class="px-3 py-1 bg-blue-900 text-blue-300 rounded-full text-sm">GUI</span>
+                            <span class="px-3 py-1 bg-blue-900 text-blue-300 rounded-full text-sm">Linux</span>
+                        </div>
+                        <div class="flex space-x-4">
+                            <!-- <a href="#" class="text-blue-400 hover:text-blue-300">View Demo</a> -->
+                            <a href="https://github.com/ZiadMD/Numerical-Analysis-project"
+                                class="text-blue-400 hover:text-blue-300">Code</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-gray-900">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center text-blue-400 mb-12" data-aos="fade-up">Experience (Student
+                Activities)</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                <!-- Experience cards with same content as before, but add data-aos attributes -->
+                <!-- Example for one experience card (repeat for others): -->
+                <!-- <div class="bg-gray-800 p-6 rounded-lg shadow-xl border border-gray-700 transform hover:scale-105 transition-all duration-300"
+                    data-aos="fade-up" data-aos-delay="100"> -->
+                    <!-- Experience content remains the same -->
+                    <!-- Repeat for other experience cards with increasing data-aos-delay -->
+                    <!-- SCU Racing Team Autonomous Software Team -->
+                    <div class="bg-gray-800 p-6 rounded-lg shadow-xl border border-gray-700 transform hover:scale-105 transition-all duration-300" data-aos="fade-up" data-aos-delay="100">           
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <!-- Position -->
+                                <h3 class="text-xl font-bold text-blue-400">Autonomous Driving Software Member</h3>
+                                <!-- Organization -->
+                                <p class="text-gray-300">SCU Racing Team</p>
+                            </div>
+                            <span class="text-gray-400">Mar 2024 - Oct 2024</span>
+                        </div>
+                        <p class="text-gray-300">Contributed to the development of autonomous driving systems. Worked on
+                            implementing control systems using LiDAR and camera sensors for perception and navigation.</p>
+                    </div>
+                    <!-- IEEE AI Technical Member -->
+                    <div class="bg-gray-800 p-6 rounded-lg shadow-xl border border-gray-700 transform hover:scale-105 transition-all duration-300"
+                    data-aos="fade-up" data-aos-delay="100">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <!-- Position -->
+                                <h3 class="text-xl font-bold text-blue-400">AI Technical Member</h3>
+                                <!-- Organization -->
+                                <p class="text-gray-300">SCU IEEE Student Branch</p>
+                            </div>
+                            <span class="text-gray-400">Oct 2023 - Present</span>
+                        </div>
+                        <p class="text-gray-300">Leading AI/ML initiatives and developing innovative software solutions.</p>
+                    </div>
+                    <!-- SCU Racing Team Autonomous Software Team Leader -->
+                    <div class="bg-gray-800 p-6 rounded-lg shadow-xl border border-gray-700 transform hover:scale-105 transition-all duration-300"
+                    data-aos="fade-up" data-aos-delay="100">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <!-- Position -->
+                                <h3 class="text-xl font-bold text-blue-400">Autonomous Driving Software Team Leader</h3>
+                                <!-- Organization -->
+                                <p class="text-gray-300">SCU Racing Team</p>
+                            </div>
+                            <span class="text-gray-400">Oct 2024 - Present</span>
+                        </div>
+                        <p class="text-gray-300">Leading and teaching autonomous software development using ROS, Python, and
+                            control systems. Overseeing the implementation of perception and navigation systems while
+                            mentoring team members in building comprehensive autonomous solutions.</p>
+                    </div>
+    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-gray-800">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center text-blue-400 mb-12" data-aos="fade-up">Technical Skills</h2>
+            <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 list-none p-0">
+                <!-- Skill cards with same content as before, but add data-aos attributes -->
+                <!-- Example for one skill card (repeat for others): -->
+                <!-- 
+                <li class="skill-card bg-gray-900 rounded-xl p-6 flex flex-col items-center transition-transform duration-200 ease-in-out hover:-translate-y-2 hover:shadow-lg" data-aos="fade-up" data-aos-delay="100">
+                    
+                </li> 
+                -->
+                <!-- Python -->
+                <li class="skill-card bg-gray-900 rounded-xl p-6 flex flex-col items-center transition-transform duration-200 ease-in-out hover:-translate-y-2 hover:shadow-lg" data-aos="fade-up" data-aos-delay="100">
+                    <div role="img" aria-label="Python logo" class="w-20 h-20 flex items-center justify-center mb-4 border-2 border-blue-400 rounded-full bg-gray-800">
+                        <i class="devicon-python-plain text-5xl text-blue-400"></i>
+                    </div>
+                    <h3 class="font-semibold text-gray-300 mb-2">Python</h3>
+                    <div class="w-24 h-2 bg-gray-700 rounded-full overflow-hidden">
+                        <div class="w-1/1 h-full bg-blue-400 rounded-full"></div>
+                    </div>
+                </li>
+
+                <!-- C++ -->
+                <li class="skill-card bg-gray-900 rounded-xl p-6 flex flex-col items-center transition-transform duration-200 ease-in-out hover:-translate-y-2 hover:shadow-lg" data-aos="fade-up" data-aos-delay="200">
+                    <div role="img" aria-label="C++ logo" class="w-20 h-20 flex items-center justify-center mb-4 border-2 border-blue-400 rounded-full bg-gray-800">
+                        <i class="devicon-cplusplus-plain text-5xl text-blue-400"></i>
+                    </div>
+                    <h3 class="font-semibold text-gray-300 mb-2">C++</h3>
+                    <div class="w-24 h-2 bg-gray-700 rounded-full overflow-hidden">
+                        <div class="w-5/6 h-full bg-blue-400 rounded-full"></div>
+                    </div>
+                </li>
+
+                <!-- ROS -->
+                <li class="skill-card bg-gray-900 rounded-xl p-6 flex flex-col items-center transition-transform duration-200 ease-in-out hover:-translate-y-2 hover:shadow-lg" data-aos="fade-up" data-aos-delay="300">
+                    <div role="img" aria-label="ROS logo" class="w-20 h-20 flex items-center justify-center mb-4 border-2 border-blue-400 rounded-full bg-gray-800">
+                        <i class="devicon-ros-original text-5xl text-blue-400"></i>
+                    </div>
+                    <h3 class="font-semibold text-gray-300 mb-2">ROS</h3>
+                    <div class="w-24 h-2 bg-gray-700 rounded-full overflow-hidden">
+                        <div class="w-1/2 h-full bg-blue-400 rounded-full"></div>
+                    </div>
+                </li>
+
+                <!-- Qt -->
+                <li class="skill-card bg-gray-900 rounded-xl p-6 flex flex-col items-center transition-transform duration-200 ease-in-out hover:-translate-y-2 hover:shadow-lg" data-aos="fade-up" data-aos-delay="400">
+                    <div role="img" aria-label="Qt logo" class="w-20 h-20 flex items-center justify-center mb-4 border-2 border-blue-400 rounded-full bg-gray-800">
+                        <i class="devicon-qt-plain text-5xl text-blue-400"></i>
+                    </div>
+                    <h3 class="font-semibold text-gray-300 mb-2">Qt</h3>
+                    <div class="w-24 h-2 bg-gray-700 rounded-full overflow-hidden">
+                        <div class="w-1/2 h-full bg-blue-400 rounded-full"></div>
+                    </div>
+                </li>
+
+                <!-- Machine Learning -->
+                <li class="skill-card bg-gray-900 rounded-xl p-6 flex flex-col items-center transition-transform duration-200 ease-in-out hover:-translate-y-2 hover:shadow-lg" data-aos="fade-up" data-aos-delay="500">
+                    <div role="img" aria-label="Machine Learning logo" class="w-20 h-20 flex items-center justify-center mb-4 border-2 border-blue-400 rounded-full bg-gray-800">
+                        <i class="devicon-scikitlearn-plain text-5xl text-blue-400"></i>
+                    </div>
+                    <h3 class="font-semibold text-gray-300 mb-2">Machine Learning</h3>
+                    <div class="w-24 h-2 bg-gray-700 rounded-full overflow-hidden">
+                        <div class="w-3/4 h-full bg-blue-400 rounded-full"></div>
+                    </div>
+                </li>
+
+                <!-- Deep Learning -->
+                <li class="skill-card bg-gray-900 rounded-xl p-6 flex flex-col items-center transition-transform duration-200 ease-in-out hover:-translate-y-2 hover:shadow-lg" data-aos="fade-up" data-aos-delay="600">
+                    <div role="img" aria-label="Deep Learning logo" class="w-20 h-20 flex items-center justify-center mb-4 border-2 border-blue-400 rounded-full bg-gray-800">
+                        <i class="devicon-tensorflow-original text-5xl text-blue-400"></i>
+                    </div>
+                    <h3 class="font-semibold text-gray-300 mb-2">Deep Learning</h3>
+                    <div class="w-24 h-2 bg-gray-700 rounded-full overflow-hidden">
+                        <div class="w-2/3 h-full bg-blue-400 rounded-full"></div>
+                    </div>
+                </li>
+
+                <!-- Git -->
+                <li class="skill-card bg-gray-900 rounded-xl p-6 flex flex-col items-center transition-transform duration-200 ease-in-out hover:-translate-y-2 hover:shadow-lg" data-aos="fade-up" data-aos-delay="700">
+                    <div role="img" aria-label="Git logo" class="w-20 h-20 flex items-center justify-center mb-4 border-2 border-blue-400 rounded-full bg-gray-800">
+                        <i class="devicon-git-plain text-5xl text-blue-400"></i>
+                    </div>
+                    <h3 class="font-semibold text-gray-300 mb-2">Git</h3>
+                    <div class="w-24 h-2 bg-gray-700 rounded-full overflow-hidden">
+                        <div class="w-3/4 h-full bg-blue-400 rounded-full"></div>
+                    </div>
+                </li>
+
+                <!-- Linux -->
+                <li class="skill-card bg-gray-900 rounded-xl p-6 flex flex-col items-center transition-transform duration-200 ease-in-out hover:-translate-y-2 hover:shadow-lg" data-aos="fade-up" data-aos-delay="800">
+                    <div role="img" aria-label="Linux logo" class="w-20 h-20 flex items-center justify-center mb-4 border-2 border-blue-400 rounded-full bg-gray-800">
+                        <i class="devicon-linux-plain text-5xl text-blue-400"></i>
+                    </div>
+                    <h3 class="font-semibold text-gray-300 mb-2">Linux</h3>
+                    <div class="w-24 h-2 bg-gray-700 rounded-full overflow-hidden">
+                        <div class="w-3/4 h-full bg-blue-400 rounded-full"></div>
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-900">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center text-blue-400 mb-12" data-aos="fade-up">Contact Me</h2>
+            <div class="max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+                <form id="contact-form" action="https://formspree.io/f/xldbkndw" method="POST"
+                    class="bg-gray-800 rounded-xl shadow-xl p-8 border border-gray-700 transform hover:scale-105 transition-all duration-300">
+                    <!-- Honeypot (hidden) -->
+                    <input type="text" name="_gotcha" class="hidden" />
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
+                        <!-- Name -->
+                        <div>
+                            <label for="name" class="block text-gray-300 text-sm font-medium mb-1">Name</label>
+                            <input id="name" name="name" type="text" required
+                                class="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 text-gray-200" />
+                        </div>
+                        <!-- Email -->
+                        <div>
+                            <label for="email" class="block text-gray-300 text-sm font-medium mb-1">Email</label>
+                            <input id="email" name="email" type="email" required
+                                class="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 text-gray-200" />
+                        </div>
+                    </div>
+                    <!-- Message -->
+                    <div class="mb-6">
+                        <label for="message" class="block text-gray-300 text-sm font-medium mb-1">Message</label>
+                        <textarea id="message" name="message" rows="5" required
+                            class="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 text-gray-200"></textarea>
+                    </div>
+                    <!-- Status -->
+                    <p id="form-status" class="text-center text-sm mb-4"></p>
+                    <!-- Submit -->
+                    <button type="submit"
+                        class="w-full bg-blue-600 hover:bg-blue-700 transition-colors duration-200 text-white font-semibold py-3 rounded-lg">Send
+                        Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-800 text-gray-300 py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2024 Ziad Mohamed. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- AOS Script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+
+        // Form handling script remains the same
+        document.getElementById("contact-form").addEventListener("submit", async function (e) {
+            // Form submission code remains the same
+        });
+    </script>
+    
+    <!-- Contact Form Script -->
+    <script>
+        document.getElementById("contact-form").addEventListener("submit", async function (e) {
+            e.preventDefault();
+            const statusEl = document.getElementById("form-status");
+            const btn = this.querySelector("button[type=submit]");
+            btn.disabled = true;
+            btn.textContent = "Sending…";
+    
+            const formData = new FormData(this);
+            try {
+                const res = await fetch(this.action, {
+                    method: "POST",
+                    body: formData,
+                    headers: { Accept: "application/json" },
+                });
+                if (res.ok) {
+                    statusEl.textContent = "✅ Your message has been sent!";
+                    this.reset();
+                } else {
+                    throw new Error("Network response was not OK");
+                }
+            } catch (err) {
+                console.error(err);
+                statusEl.textContent = "⚠️ Oops! Something went wrong. Please try again later.";
+            } finally {
+                btn.disabled = false;
+                btn.textContent = "Send Message";
+            }
+        });
+    </script>
+      
+</body>
+</html> 
